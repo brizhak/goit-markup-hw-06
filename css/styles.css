@@ -82,9 +82,9 @@ img {
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
-    display: flex;
     align-items: center;
     letter-spacing: 0.04em;
+    outline: none;
     cursor: pointer;
 }
 .title {
@@ -94,6 +94,7 @@ img {
     letter-spacing: 0.02em;
     text-transform: capitalize;
 }
+
 .caption {
     font-weight: 500;
     font-size: 20px;
@@ -143,7 +144,8 @@ img {
 }
 
 .nav-item {
-    padding: 24px 0;
+    padding-top: 24px;
+    padding-bottom: 28px;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
@@ -156,6 +158,7 @@ img {
     display: block;
     width: 100%;
     height: 4px;
+    bottom: 0;
     background-color: var(--first-btn-focus);
     border-radius: 2px;
     position: absolute;
@@ -321,6 +324,7 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .team-soc-link:hover,
 .team-soc-link:focus {
@@ -413,11 +417,72 @@ img {
     border-radius: 50%;
     display: flex;
     justify-content: center;
-    align-items: center;   
+    align-items: center;  
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 }
 .footer-link:hover,
 .footer-link:focus {
     background-color: #31D0AA;
+}
+.third-footer {
+    padding-left: 80px;
+}
+.subscribe-form {
+}
+.subscribe-label {
+    display: block;
+    margin-bottom: 16px;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: var(--second-title-color);
+}
+input {
+    width: 264px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    border-radius: 4px;
+    background-color: transparent;
+    outline: none;
+}
+input[placeholder] {
+    font-size: 12px;
+    line-height: 2;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.6);
+}
+.input-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+
+.subscribe-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    width: 165px;
+    min-height: 40px;
+    padding-top: 8px 24px;
+    color: var(--second-title-color);
+    background: #4D5AE5;
+    border: transparent;
+    border-radius: 4px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.subscribe-btn:focus,
+.subscribe-btn:hover {
+    background-color: var(--first-btn-focus);
+}
+.subscribe-icon {
+    fill: #FFFFFF;
 }
 /*-------------------portfolio--------------------*/
 .portfolio {
@@ -530,7 +595,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-
+    
     width: 24px;
     height: 24px;
     margin-left: auto;
@@ -538,11 +603,21 @@ img {
     border-radius: 50%;
     background-color: #E7E9FC;
     border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-btn:hover > .drop-closer, .modal-btn:focus >.drop-closer {
+    fill: var(--main-background-color);
+    
+}
+.modal-btn:hover, .modal-btn:focus {
+    background-color: var(--first-btn-focus);
+    border-color: var(--first-btn-focus);
 }
 .drop-closer {
     width: 8px;
     height: 8px;
     fill: #000000;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
    
 }
 .is-hidden {
@@ -552,4 +627,123 @@ img {
 }
 .backdrop.is-hidden .modal {
     transform: translate(-50%, -50%) scale(0);
+}
+.form-title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+    letter-spacing: 0.02em;
+    margin-top: 24px;
+    margin-bottom: 16px;
+    color: var(--main-title-color) ;
+}
+
+.modal-label {
+   
+    display: block;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: #8E8F99;
+    margin-bottom: 4px;
+}
+.input-wrap {
+    position: relative;
+}
+.modal-input {
+    display: block;
+    width: 100%;
+    margin-bottom: 8px;
+    padding-left: 38px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #2E2F42;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-icon {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    fill: #2E2F42;
+    transform: translateY(-50%);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-input:focus{
+    border-color: var(--accent-color);
+}
+.modal-input:focus + .modal-icon {
+    fill: var(--accent-color);
+
+}
+.modal-textarea {
+    width: 100%;
+    height: 120px;
+    padding: 8px 16px;
+    resize: none;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-textarea:focus {
+    border-color: var(--accent-color);
+}
+textarea[placeholder] {
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: rgba(117, 117, 117, 0.5);
+    outline: none;
+}
+
+.check-input {
+    width: 16px;
+    height: 16px;
+}
+.check-text {
+    display: flex;
+    align-items: center;
+    padding-top: 16px;
+    padding-bottom: 24px;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: #757575;
+}
+.check-text span {
+    width: 16px;
+    height: 16px;
+    border: 1.25px solid #2E2F42;
+    border-radius: 2px;
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    fill: transparent;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.check-input:checked + .check-text span {
+    fill: var(--second-btn);
+    background-color: var(--first-btn-focus);
+    border: none;
+}
+
+.form-btn {
+    display: block;
+    width: 169px;
+    min-height: 56px;
+    padding: 16px 32px;
+    margin: 0 auto;
+    color: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-color: transparent;
+    border-radius: 4px;
+    background-color: var(--accent-color);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1)
+}
+.form-btn:hover, .form-btn:focus {
+    background-color: var(--first-btn-focus);
 }
